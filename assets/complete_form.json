@@ -1,0 +1,296 @@
+{
+    "formName": "User Information Form",
+    "formConfig": {
+      "defaultValues": {
+        "vehicle_make": 1,
+        "vehicle_model": 1
+      }
+    },
+    "steps": [
+      {
+        "id": 1,
+        "title": "Personal Information",
+        "name": "personal_information",
+        "fields": [
+          {
+            "id": 1,
+            "type": "number",
+            "label": "Age",
+            "name": "age",
+            "validation": {
+              "required": true,
+              "minLength": 2,
+              "maxLength": 50
+            },
+            "value": "John" 
+          },
+          {
+            "id": 2,
+            "type": "text",
+            "label": "Last Name",
+            "name": "last_name",
+            "validation": {
+              "required": true,
+              "minLength": 2,
+              "maxLength": 50
+            },
+            "value": "Doe"
+          },
+          {
+            "id": 3,
+            "type": "date",
+            "label": "Year",
+            "name": "year",
+            "validation": {
+              "required": true,
+              "yearOnly":true
+            },
+            "value": "1990-01-01"
+          },
+          {
+            "id": 8,
+            "type": "date",
+            "label": "Date",
+            "name": "date",
+            "validation": {
+              "required": true
+            },
+            "value": "1990-01-01"
+          },
+          {
+            "id": 4,
+            "type": "radio",
+            "label": "Select your gender",
+            "name": "gender",
+            "validation": {
+              "required": true
+            },
+            "options": [
+              {"id": 1, "value": "Male"},
+              {"id": 2, "value": "Female"},
+              {"id": 3, "value": "Other"}
+            ],
+            "value": 1
+          },
+          {
+            "id": 6,
+            "type": "tel",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "validation": {
+              "required": true
+            },
+            "value": "+1234567890"
+          },
+          {
+            "id": 7,
+            "type": "textarea",
+            "label": "Address",
+            "name": "address",
+            "validation": {
+              "required": true,
+              "maxLength": 300
+            },
+            "value": "123 Main St, City, Country"
+          },
+          {
+            "id": 8,
+            "type": "email",
+            "label": "Email Address",
+            "name": "email",
+            "validation": {
+              "required": true,
+              "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+            },
+            "value": "john.doe@example.com"
+          },
+          {
+            "id": 11,
+            "type": "checkbox",
+            "label": "Subscribe to Newsletter",
+            "name": "subscribe_newsletter",
+            "validation": {
+              "required": true
+            },
+            "options": [
+              {"id": 1, "value": "Male"},
+              {"id": 2, "value": "Female"},
+              {"id": 3, "value": "Other"}
+            ]
+          },
+          {
+            "id": 12,
+            "type": "select",
+            "label": "Vehicle Make",
+            "name": "vehicle_make",
+            "validation": {
+              "required": true
+            },
+            "multi_select": false,
+            "options": [
+              {"id": 1, "value": "Toyota"},
+              {"id": 2, "value": "Audi"},
+              {"id": 3, "value": "Nissan"}
+            ],
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "select",
+            "label": "Vehicle Model",
+            "name": "vehicle_model",
+            "validation": {
+              "required": true
+            },
+            "multi_select": false,
+            "options": [
+              {"id": 1, "value": "Mark x"},
+              {"id": 2, "value": "A5"},
+              {"id": 3, "value": "Nissan"}
+            ],
+            "parentFieldId": 8,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Contact Information",
+        "name": "contact_information",
+        "fields": [
+          {
+            "id": 5,
+            "type": "email",
+            "label": "Email Address",
+            "name": "email",
+            "validation": {
+              "required": true,
+              "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+            },
+            "value": "john.doe@example.com"
+          },
+          {
+            "id": 6,
+            "type": "tel",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "validation": {
+              "required": true,
+              "pattern": "^\\+?[1-9]\\d{1,14}$"
+            },
+            "value": "+1234567890"
+          },
+          {
+            "id": 7,
+            "type": "textarea",
+            "label": "Address",
+            "name": "address",
+            "validation": {
+              "required": false,
+              "maxLength": 300
+            },
+            "value": "123 Main St, City, Country"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Vehicle Information",
+        "name": "vehicle_information",
+        "fields": [
+          {
+            "id": 8,
+            "type": "select",
+            "label": "Vehicle Make",
+            "name": "vehicle_make",
+            "validation": {
+              "required": true
+            },
+            "multi_select": false,
+            "options": [
+              {"id": 1, "value": "Toyota"},
+              {"id": 2, "value": "Audi"},
+              {"id": 3, "value": "Nissan"}
+            ],
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "select",
+            "label": "Vehicle Model",
+            "name": "vehicle_model",
+            "validation": {
+              "required": true
+            },
+            "multi_select": false,
+            "options": [
+              {"id": 1, "value": "Mark x"},
+              {"id": 2, "value": "A5"},
+              {"id": 3, "value": "Nissan"}
+            ],
+            "parentFieldId": 8,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Additional Information",
+        "name": "additional_information",
+        "fields": [
+          {
+            "id": 14,
+            "type": "file",
+            "label": "Upload a copy of your Id card",
+            "name": "id_number",
+            "validation": {
+              "required": true
+            }
+          },
+          {
+            "id": 12,
+            "type": "image",
+            "label": "Profile Picture",
+            "name": "profile_picture",
+            "source": "capture",
+            "validation": {
+              "required": true
+            },
+            "value": ""
+          },
+          {
+            "id": 13,
+            "type": "video",
+            "label": "Introductory Video",
+            "name": "intro_video",
+            "validation": {
+              "required": false
+            },
+            "source": "capture",
+            "value": ""
+          },
+          {
+            "id": 14,
+            "type": "audio",
+            "label": "Voice Note",
+            "name": "voice_note",
+            "validation": {
+              "required": false
+            },
+            "source": "gallery",
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "fieldId": 9,
+        "dependsOnFieldId": 8,
+        "stepId": 3
+      }
+    ]
+  }
+  
+  
+  
