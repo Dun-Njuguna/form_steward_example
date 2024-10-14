@@ -8,14 +8,13 @@ import 'package:form_steward/form_steward.dart';
 /// - [medium]: Tablet screen sizes
 /// - [large]: Desktop screen sizes
 class ScreenBreakpoints {
-  static const double small = 600;   
-  static const double medium = 1024; 
-  static const double large = 1440;  
+  static const double small = 600;
+  static const double medium = 1024;
+  static const double large = 1440;
 }
 
 /// A utility class to help determine the screen size for responsive layout.
 class ResponsiveHelper {
-  
   /// Returns true if the current screen width is considered small (mobile).
   ///
   /// A small screen has a width less than [ScreenBreakpoints.small].
@@ -25,11 +24,11 @@ class ResponsiveHelper {
 
   /// Returns true if the current screen width is considered medium (tablet).
   ///
-  /// A medium screen has a width between [ScreenBreakpoints.small] 
+  /// A medium screen has a width between [ScreenBreakpoints.small]
   /// and [ScreenBreakpoints.medium].
   static bool isMediumScreen(BuildContext context) {
     return MediaQuery.of(context).size.width >= ScreenBreakpoints.small &&
-           MediaQuery.of(context).size.width < ScreenBreakpoints.medium;
+        MediaQuery.of(context).size.width < ScreenBreakpoints.medium;
   }
 
   /// Returns true if the current screen width is considered large (desktop).
@@ -45,17 +44,15 @@ class ResponsiveHelper {
 /// This widget manages form transitions, validation, and data handling
 /// based on the provided form steps and state notifiers.
 class MyCustomStepperWidget extends StepperWidget {
-  
   /// Creates a custom stepper widget.
   ///
   /// The [currentStep], [stepperType], [formStewardNotifier],
   /// [formStewardStateNotifier], and [formSteps] parameters are required.
   MyCustomStepperWidget({
     super.key,
-    required super.currentStep,
     required super.stepperType,
     required super.formStewardNotifier,
-    required super.formStewardStateNotifier, 
+    required super.formStewardStateNotifier,
     required super.formSteps,
   });
 
@@ -106,13 +103,11 @@ class DynamicFormPage extends StatefulWidget {
 
 class DynamicFormPageState extends State<DynamicFormPage> {
   List<FormStepModel>? _formSteps;
-  late StepController _stepController;
   late StewardStepperType stepperType;
 
   @override
   void initState() {
     super.initState();
-    _stepController = StepController();
     _loadForm();
   }
 
@@ -137,10 +132,10 @@ class DynamicFormPageState extends State<DynamicFormPage> {
         child: CircularProgressIndicator(),
       );
     }
-    
+
     final validationTriggerNotifier = ValidationTriggerNotifier();
     final formStewardStateNotifier = FormStewardStateNotifier();
-    
+
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 8),
@@ -150,13 +145,12 @@ class DynamicFormPageState extends State<DynamicFormPage> {
                 formStewardNotifier: validationTriggerNotifier,
                 formStewardStateNotifier: formStewardStateNotifier,
                 formSteps: _formSteps!,
-                currentStep: _stepController.currentStep,
               )
             : const Text("Steps not available"),
       ),
     );
   }
-  
+
   /// Determines the type of stepper layout based on the screen size.
   ///
   /// - For small screens (mobile), the stepper type is set to vertical.
