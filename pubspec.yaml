@@ -1,5 +1,5 @@
 name: form_steward_example
-description: "A new Flutter project."
+description: "A Flutter project demonstrating responsive multi-step forms using FormSteward. Includes custom stepper navigation, dynamic form loading from JSON, and layout adaptation for mobile, tablet, and desktop."
 publish_to: 'none'
 version: 0.1.0
 
