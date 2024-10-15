@@ -46,13 +46,10 @@ class ResponsiveHelper {
 class MyCustomStepperWidget extends StepperWidget {
   /// Creates a custom stepper widget.
   ///
-  /// The [currentStep], [stepperType], [formStewardNotifier],
-  /// [formStewardStateNotifier], and [formSteps] parameters are required.
+  /// The [stepperType] and [formSteps] parameters are required.
   MyCustomStepperWidget({
     super.key,
     required super.stepperType,
-    required super.formStewardNotifier,
-    required super.formStewardStateNotifier,
     required super.formSteps,
   });
 
@@ -133,17 +130,12 @@ class DynamicFormPageState extends State<DynamicFormPage> {
       );
     }
 
-    final validationTriggerNotifier = ValidationTriggerNotifier();
-    final formStewardStateNotifier = FormStewardStateNotifier();
-
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: _formSteps != null
             ? MyCustomStepperWidget(
                 stepperType: stepperType,
-                formStewardNotifier: validationTriggerNotifier,
-                formStewardStateNotifier: formStewardStateNotifier,
                 formSteps: _formSteps!,
               )
             : const Text("Steps not available"),
